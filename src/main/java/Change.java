@@ -11,15 +11,15 @@ public class Change {
 	public String calculate(double paid, double due) {
 		changeValue = paid-due;
 		changeBucks = "";
-		return changeNotes();
+		return changeBucks();
 	}
 	
-	private String changeNotes() {
+	private String changeBucks() {
 		for(double note : notes) {
 			if(note <= changeValue) {
 				changeValue-=note;
 				changeBucks += convert(note);
-				changeNotes();
+				changeBucks();
 				break;
 			}
 		}
